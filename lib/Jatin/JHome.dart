@@ -22,7 +22,7 @@ class _JatinHomeState extends State<JatinHome> {
     }
 
     return MaterialApp(
-      theme: ThemeData(primaryColor: Colors.white, accentColor: Colors.green),
+      theme: ThemeData(primaryColor: Colors.white, accentColor: Colors.red),
       debugShowCheckedModeBanner: false,
       // theme: ThemeData(
       //   primaryColor: Colors.green,
@@ -116,9 +116,70 @@ class Workout extends StatelessWidget {
     home:
     return ListView(
       children: <Widget>[
-        Center(
-          child: Text("to be done"),
-        )
+        new Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 38,
+            left: MediaQuery.of(context).size.width / 20,
+            right: MediaQuery.of(context).size.width / 80,
+          ),
+
+          //    child:
+          // new Container(
+          //   width:MediaQuery.of(context).size.width/50,
+          //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+          //   left: MediaQuery.of(context).size.width/5,),
+          //   decoration: new BoxDecoration(
+          //     borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+          //     color: Colors.purple,gradient: new LinearGradient(
+          //       colors: [Colors.purple[300], Colors.purple[900]],begin: Alignment.centerRight,
+          //       end: Alignment.centerLeft,
+          //     ),
+          //   ),
+          child: Row(
+            children: <Widget>[
+              new Container(
+                height: MediaQuery.of(context).size.height / 12,
+                width: MediaQuery.of(context).size.width / 2.2,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+                  color: Colors.purple,
+                ),
+
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 60,
+                  left: MediaQuery.of(context).size.width / 27,
+                ),
+                child: Text('ACTIVE PACKS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height / 35,
+                    )),
+              ),
+              new Container(
+                height: MediaQuery.of(context).size.height / 12,
+                width: MediaQuery.of(context).size.width / 2.2,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+                  color: Colors.purple,
+                ),
+
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 60,
+                  left: MediaQuery.of(context).size.width / 27,
+                ),
+                child: Text('ACTIVE PACKS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height / 35,
+                    )),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
@@ -130,9 +191,388 @@ class Packages extends StatelessWidget {
     home:
     return ListView(
       children: <Widget>[
-        Center(
-          child: Text(" to be done"),
-        )
+        Container(
+          child: Column(
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "GOLD TRAINER PACKS",
+                          style: TextStyle(
+                            color: Colors.black,
+                            height: 22.0,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            bottom: 5.0,
+                          ),
+                        ),
+                        Text(
+                          "Cult Galleria",
+                          style: TextStyle(
+                            color: Colors.black,
+                            height: 18.0,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                    Tab(
+                      text: "ALL CENTERS",
+                    ),
+                  ],
+                ),
+              ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height/2.5,
+              //   width: MediaQuery.of(context).size.width/3.0,
+              //   child: Row(
+
+              //     children: const <Widget>[
+              //       Card(child: ListTile(
+
+              //         title: Text("5 Sessions"),
+
+              //       ),),
+              //     ],
+              //   ),
+
+              // )
+
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height/2.5,
+
+              //  child: Row(
+              //    children: <Widget>[
+              //      Column(
+              //        crossAxisAlignment: CrossAxisAlignment.start,
+              //        children: <Widget>[
+
+              //          Text("5 Sessions",style:TextStyle(color: Colors.black,fontSize:18.0,),
+              //          textAlign: TextAlign.left,
+              //          ),
+              //         Padding(
+              //            padding: EdgeInsets.only(bottom: 10.0,),
+              //          ),
+              //          Text("₹ 7990", style:TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough,fontSize: 15.0,),
+
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+              //          Text("₹ 6990", style: TextStyle(color: Colors.black, fontSize: 36.0,fontWeight: FontWeight.bold,),
+
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+              //          Text("₹ 1398/session", style: TextStyle(color: Colors.grey, fontSize:12.0,),
+
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+
+              //         ],
+              //         ),
+
+              //        ],
+
+              //  ),
+              //),
+              Wrap(
+                spacing: 5.0,
+                children: <Widget>[
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '5 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 6990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1398/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '11 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1354/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '25 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 8990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1354/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 10,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text(
+                          "SILVER TRAINER PACKS",
+                          style: TextStyle(
+                            color: Colors.black,
+                            height: 22.0,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                            bottom: 5.0,
+                          ),
+                        ),
+                        Text(
+                          "Cult Galleria",
+                          style: TextStyle(
+                            color: Colors.black,
+                            height: 18.0,
+                          ),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
+                    Tab(
+                      text: "ALL CENTERS",
+                    ),
+                  ],
+                ),
+              ),
+
+              Wrap(
+                spacing: 5.0,
+                children: <Widget>[
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '5 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 6990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1398/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '11 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1354/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Chip(
+                    label: RichText(
+                      text: TextSpan(
+                        style: DefaultTextStyle.of(context).style,
+                        children: <TextSpan>[
+                          TextSpan(
+                            text: '25 Sessions \n',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: '₹ 7490 \n',
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.6),
+                              decoration: TextDecoration.lineThrough,
+                              fontSize: 15.0,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 8990 \n",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 36.0,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          TextSpan(
+                            text: "₹ 1354/session",
+                            style: TextStyle(
+                              color: Colors.black.withOpacity(0.4),
+                              fontSize: 12.0,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }
