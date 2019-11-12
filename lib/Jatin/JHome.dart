@@ -16,9 +16,11 @@ class _JatinHomeState extends State<JatinHome> {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     textStyle() {
-      return new TextStyle(color: Colors.black, fontSize: MediaQuery.of(context).size.height/25.0);
+      return new TextStyle(
+          color: Colors.black,
+          fontSize: MediaQuery.of(context).size.height / 31.0);
     }
-    // TODO: implement build
+
     return MaterialApp(
       theme: ThemeData(primaryColor: Colors.white, accentColor: Colors.green),
       debugShowCheckedModeBanner: false,
@@ -26,52 +28,74 @@ class _JatinHomeState extends State<JatinHome> {
       //   primaryColor: Colors.green,
       //   accentColor: Colors.orange,
       // ),
-      
+
       home: new DefaultTabController(
         length: 2,
         child: new Scaffold(
-          appBar: AppBar(
-            actions: <Widget>[
-              SizedBox(
-                height: MediaQuery.of(context).size.height/45,
-             child: Row(
-               mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width/3.3333,
-                  child:ShowImage("2ndscreenlogo"),),
-                  new Align(
-                    alignment: Alignment.centerRight,
-                    widthFactor:MediaQuery.of(context).size.width/380 ,
-                    child: Text("                               Delhi Ncr",),
-                  ),
-                  new Align(
-                    alignment: Alignment.centerRight,
-                    child: Icon(
-                      MyFlutterApp.circle,
-                      color: Colors.cyanAccent,
-                      size: SizeConfig.blockSizeHorizontal * 2.5,
+          appBar: PreferredSize(
+            preferredSize: Size.fromHeight(MediaQuery.of(context).size.height /
+                6.5), // here the desired height
+            child: AppBar(
+              actions: <Widget>[
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.width / 35.0,
+                      left: MediaQuery.of(context).size.width / 20,
+                      right: MediaQuery.of(context).size.width / 20,
+                    ),
+                    child: Row(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      // crossAxisAlignment: CrossAxisAlignment.stretch,
+                      // verticalDirection: VerticalDirection.down,
+                      children: <Widget>[
+                        SizedBox(
+                          height: MediaQuery.of(context).size.width / 20.3333,
+                          width: MediaQuery.of(context).size.width / 3.3333,
+                          child: ShowImage("2ndscreenlogo"),
+                        ),
+                        new Align(
+                          alignment: Alignment.centerRight,
+                          heightFactor:
+                              MediaQuery.of(context).size.height / 400,
+                          widthFactor: MediaQuery.of(context).size.width / 380,
+                          child: Text("                   Delhi Ncr",
+                              style: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.height / 45,
+                                fontWeight: FontWeight.w400,
+                              )),
+                        ),
+                        new Align(
+                          alignment: Alignment.centerRight,
+                          child: Icon(
+                            MyFlutterApp.circle,
+                            color: Colors.cyanAccent,
+                            size: SizeConfig.blockSizeHorizontal * 2.5,
+                          ),
+                        ),
+                        SizedBox(
+                          height: SizeConfig.blockSizeHorizontal * 20.5,
+                          width: MediaQuery.of(context).size.width / 7.0,
+                          // height:MediaQuery.of(context).size.height*20.0,
+                          child: ShowImage("userimg"),
+                        ),
+                      ],
                     ),
                   ),
-                  SizedBox(
-                      width: MediaQuery.of(context).size.width/5.0,
-                      // height:MediaQuery.of(context).size.height*20.0,
-                  child:
-                  ShowImage("userimg"),),
-                ],
-              ),
-              ),
-            ],
-            backgroundColor: Colors.white,
-            bottom: TabBar(
-              tabs: <Widget>[
-                Tab(
-                  child:Text("Workout",style:textStyle()),
-                ),
-                Tab(
-                 child:Text("Packages",style:textStyle()),
                 ),
               ],
+              backgroundColor: Colors.white,
+              bottom: TabBar(
+                tabs: <Widget>[
+                  Tab(
+                    child: Text("Workout", style: textStyle()),
+                  ),
+                  Tab(
+                    child: Text("Packages", style: textStyle()),
+                  ),
+                ],
+              ),
             ),
           ),
           body: TabBarView(
@@ -81,40 +105,37 @@ class _JatinHomeState extends State<JatinHome> {
             ],
           ),
         ),
-        //   ),
       ),
     );
   }
 }
 
-class Workout extends StatelessWidget{
+class Workout extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     home:
     return ListView(
       children: <Widget>[
         Center(
-child:
-        Text("to be done"),)
-      ],
-    );
-  }
-
-}
-class Packages extends StatelessWidget{
-  Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    home:
-    return ListView(
-      children: <Widget>[
-        Center(
-child:Text(" to be done"),
+          child: Text("to be done"),
         )
-        
       ],
     );
   }
+}
 
+class Packages extends StatelessWidget {
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    home:
+    return ListView(
+      children: <Widget>[
+        Center(
+          child: Text(" to be done"),
+        )
+      ],
+    );
+  }
 }
 
 // class Workout extends StatefulWidget {
