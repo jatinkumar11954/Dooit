@@ -44,6 +44,11 @@ flutter:
   assets:
      - image/2ndscreenlogo.png
      - image/userimg.png
+     - image/gym_pic1.png
+     - image/gym_pic2.png
+     - image/how_it_works.png
+     - image/poster.png
+     
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -72,6 +77,8 @@ flutter:
     - family:  MyFlutterApp
       fonts:
        - asset: icons/fonts/MyFlutterApp.ttf
-  #
+    - family:  Triangle
+      fonts:
+       - asset: icons/fonts/Triangle.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

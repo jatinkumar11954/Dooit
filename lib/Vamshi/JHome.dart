@@ -89,9 +89,9 @@ class _JatinHomeState extends State<JatinHome> {
               backgroundColor: Colors.white,
               bottom: TabBar(
                 tabs: <Widget>[
-                  // new Container(
-                  //   width: SizeConfig.blockSizeHorizontal * 30.5,
-                  Tab(
+              // new Container(
+              //   width: SizeConfig.blockSizeHorizontal * 30.5,
+                Tab(
                     child: Text("Workout", style: textStyle()),
                   ),
                   Tab(
@@ -113,11 +113,160 @@ class _JatinHomeState extends State<JatinHome> {
   }
 }
 
-// class Workout extends StatelessWidget {
-//   Widget build(BuildContext context) {
+class Workout extends StatelessWidget {
+  Widget build(BuildContext context) {
+    SizeConfig().init(context);
+    home:
+    return ListView(
+      children: <Widget>[
+        new Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 38,
+            left: MediaQuery.of(context).size.width / 20,
+            right: MediaQuery.of(context).size.width / 80,
+          ),
 
-//   }
-// }
+          //    child:
+          // new Container(
+          //   width:MediaQuery.of(context).size.width/50,
+          //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+          //   left: MediaQuery.of(context).size.width/5,),
+          //   decoration: new BoxDecoration(
+          //     borderRadius: new BorderRadius.all(new Radius.circular(10.0)),
+          //     color: Colors.purple,gradient: new LinearGradient(
+          //       colors: [Colors.purple[300], Colors.purple[900]],begin: Alignment.centerRight,
+          //       end: Alignment.centerLeft,
+          //     ),
+          //   ),
+          child: Row(
+            children: <Widget>[
+              new Container(
+                height: MediaQuery.of(context).size.height / 12,
+                width: MediaQuery.of(context).size.width / 2.2,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.only(
+                    topLeft: new Radius.circular(10.0),
+                    bottomLeft: new Radius.circular(10.0),
+                  ),
+                  color: Colors.deepPurple[600],
+                ),
+
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 39,
+                  left: MediaQuery.of(context).size.width / 17,
+                ),
+                child: Text('ACTIVE PACKS',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height / 43,
+                    )),
+              ),
+              new Container(
+                height: MediaQuery.of(context).size.height / 12,
+                width: MediaQuery.of(context).size.width / 2.2,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+                decoration: new BoxDecoration(
+                  borderRadius: new BorderRadius.only(
+                    topRight: new Radius.circular(10.0),
+                    bottomRight: new Radius.circular(10.0),
+                  ),
+                  color: Colors.deepPurple[400],
+                ),
+
+                padding: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height / 70,
+                  left: MediaQuery.of(context).size.width / 27,
+                ),
+                child: Text('5 sliver Trainer Session(ST)',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.height / 40,
+                    )),
+              ),
+            ],
+          ),
+        ),
+        new Container(
+          padding: EdgeInsets.only(
+            top: MediaQuery.of(context).size.height / 45,
+            left: MediaQuery.of(context).size.width / 50,
+            right: MediaQuery.of(context).size.width / 90,
+          ),
+          child: Row(
+            children: <Widget>[
+              new Container(
+                height: MediaQuery.of(context).size.height / 2,
+                width: MediaQuery.of(context).size.width / 2.13333,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+                padding: EdgeInsets.only(
+                  // top: MediaQuery.of(context).size.height / 39,
+                  left: MediaQuery.of(context).size.width / 55,
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Text('  PREFERED CENTER',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: MediaQuery.of(context).size.height / 48,
+                          fontWeight: FontWeight.w600,
+                        )),
+                    Text(
+                      'Cult Galleria                  ',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400,
+
+                        fontSize: MediaQuery.of(context).size.height / 58,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              new Container(
+                height: MediaQuery.of(context).size.height / 2,
+                width: MediaQuery.of(context).size.width /2.0,
+                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
+                //   left: MediaQuery.of(context).size.width/5,),
+
+                padding: EdgeInsets.only(
+                  // top: MediaQuery.of(context).size.height / 550,
+                  left: MediaQuery.of(context).size.width / 75,
+                  // bottom:MediaQuery.of(context).size.height  *0.8,
+                ),
+                child: Column(
+                  children: <Widget>[
+                  //  RaisedButton(
+                  //    padding: EdgeInsets.only(top:0.0,bottom:0.0,),
+                  //    color: Colors.black,
+                  //    child:
+                      Text('All CENTERS',
+                        style: TextStyle(
+                          color: Colors.red,
+                          fontWeight: FontWeight.w600,
+
+                          fontSize: MediaQuery.of(context).size.height / 48,
+                        )),
+                        //  onPressed: () {
+
+                        // },
+                        // elevation: 0.0
+                        // ),
+                  ],
+                ),
+              ),
+            ],
+          ),   
+          
+        ),
+        new Divider(),
+      ],
+    );
+  }
+}
 
 class Packages extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -550,334 +699,314 @@ class Packages extends StatelessWidget {
         ),
         Image.asset('image/poster.png'),
       ],
+      
     );
   }
 }
 
-class Workout extends StatefulWidget {
-  @override
-  _WorkoutState createState() => _WorkoutState();
-}
 
-class _WorkoutState extends State<Workout> {
-  int photoIndex = 1;
+  
 
-  List<String> photos = [
-    'image/gym_pic2.png',
-    'image/gym_pic1.png',
-  ];
+      // new Container(
+      //   padding:EdgeInsets.all(SizeConfig.blockSizeVertical*5.0) ,
+      //           child:Row(
+             
+      //           children: <Widget>[
+      //          ListView(
+      //            children: <Widget>[
+      //              ListTile(
+      //                title: Text('5 Sessions',
+      //                style: TextStyle(color: Colors.black,fontSize:SizeConfig.blockSizeVertical*5.0),
+      //              ),
+      //              ),
 
-  bool day = false;
-  bool night = false;
+      //            ],
+                 
+      //          )
+      //        ],
+      //      ),
+      // ),
 
-  void _previousImage() {
-    setState(() {
-      photoIndex = 0;
-      // night = !day;
-      night = day == false ? true : false;
-      day = night == true ? true : false;
-      night = photoIndex == 0 ? true : false;
-      day = photoIndex == 1 ? false : true;
-    });
-  }
+         
+      
+      //   Container(
+      //     child: Column(
+      //       children: <Widget>[
+      //         Container(
+      //           height: 50.0,
+      //           child: Row(
+      //             crossAxisAlignment: CrossAxisAlignment.start,
+      //             children: <Widget>[
+      //               Column(
+      //                 crossAxisAlignment: CrossAxisAlignment.start,
+      //                 children: <Widget>[
+      //                   Text(
+      //                     "GOLD TRAINER PACKS",
+      //                     style: TextStyle(
+      //                       color: Colors.black,
+      //                       height: 25.0,
+      //                     ),
+      //                     textAlign: TextAlign.center,
+      //                   ),
+      //                   Padding(
+      //                     padding: EdgeInsets.only(
+      //                       bottom: 5.0,
+      //                     ),
+      //                   ),
+      //                   Text(
+      //                     "Cult Galleria",
+      //                     style: TextStyle(
+      //                       color: Colors.black,
+      //                       height: 18.0,
+      //                     ),
+      //                     textAlign: TextAlign.left,
+      //                   ),
+      //                 ],
+      //               ),
+      //               Tab(
+      //                 text: "ALL CENTERS",
+      //               ),
+      //             ],
+      //           ),
+      //         ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height/20.5,
+              //   width: MediaQuery.of(context).size.width/30.0,
+              //   child: Row(
 
-  void _nextImage() {
-    setState(() {
-      // day = !night;
-      //  night=true;
-      photoIndex = 1;
-      day = night == true ? false : true;
-      night = day == false ? false : true;
-      day = photoIndex == 1 ? false : true;
-      night = photoIndex == 0 ? true : false;
-    });
-  }
+              //     children: const <Widget>[
+                    
+                
 
-  @override
-  Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    home:
-    return ListView(
-      children: <Widget>[
-        new Container(
-          padding: EdgeInsets.only(
-            top: MediaQuery.of(context).size.height / 38,
-            left: MediaQuery.of(context).size.width / 20,
-            right: MediaQuery.of(context).size.width / 80,
-          ),
-          child: Row(
-            children: <Widget>[
-              new Container(
-                height: MediaQuery.of(context).size.height / 12,
-                width: MediaQuery.of(context).size.width / 2.2,
-                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
-                //   left: MediaQuery.of(context).size.width/5,),
-                decoration: new BoxDecoration(
-                  borderRadius: new BorderRadius.only(
-                    topLeft: new Radius.circular(10.0),
-                    bottomLeft: new Radius.circular(10.0),
-                  ),
-                  color: Colors.deepPurple[600],
-                ),
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height/2.5,
 
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 39,
-                  left: MediaQuery.of(context).size.width / 17,
-                ),
-                child: Text('ACTIVE PACKS',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: MediaQuery.of(context).size.height / 43,
-                    )),
-              ),
-              new Container(
-                height: MediaQuery.of(context).size.height / 12,
-                width: MediaQuery.of(context).size.width / 2.2,
-                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
-                //   left: MediaQuery.of(context).size.width/5,),
-                decoration: new BoxDecoration(
-                  borderRadius: new BorderRadius.only(
-                    topRight: new Radius.circular(10.0),
-                    bottomRight: new Radius.circular(10.0),
-                  ),
-                  color: Colors.deepPurple[400],
-                ),
+              //  child: Row(
+              //    children: <Widget>[
+              //      Column(
+              //        crossAxisAlignment: CrossAxisAlignment.start,
+              //        children: <Widget>[
 
-                padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height / 70,
-                  left: MediaQuery.of(context).size.width / 27,
-                ),
-                child: Text('5 sliver Trainer Session(ST)',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: MediaQuery.of(context).size.height / 40,
-                    )),
-              ),
-            ],
-          ),
-        ),
-        new Container(
-          height: MediaQuery.of(context).size.height * 0.09,
-          width: MediaQuery.of(context).size.width * 0.98,
+              //          Text("5 Sessions",style:TextStyle(color: Colors.black,fontSize:18.0,),
+              //          textAlign: TextAlign.left,
+              //          ),
+              //         Padding(
+              //            padding: EdgeInsets.only(bottom: 10.0,),
+              //          ),
+              //          Text("₹ 7990", style:TextStyle(color: Colors.grey, decoration: TextDecoration.lineThrough,fontSize: 15.0,),
 
-          // padding: EdgeInsets.only(
-          //   top: MediaQuery.of(context).size.height / 45,
-          //   left: MediaQuery.of(context).size.width / 50,
-          //   right: MediaQuery.of(context).size.width / 90,
-          // ),
-          child: Row(
-            children: <Widget>[
-              new Container(
-                height: SizeConfig.blockSizeVertical * 8,
-                width: SizeConfig.blockSizeHorizontal * 55.5,
-                //   padding: EdgeInsets.only(top: MediaQuery.of(context).size.height / 14,
-                //   left: MediaQuery.of(context).size.width/5,),
-                padding: EdgeInsets.only(
-                  // top: MediaQuery.of(context).size.height / 39,
-                  left: SizeConfig.blockSizeHorizontal * 1.7,
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Text('  PREFERED CENTER',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: SizeConfig.blockSizeVertical * 2.6,
-                          fontWeight: FontWeight.w600,
-                        )),
-                    Text(
-                      'Cult Galleria                  ',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.w400,
-                        fontSize: SizeConfig.blockSizeVertical * 1.7,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              new Container(
-                height: SizeConfig.blockSizeVertical * 8,
-                width: SizeConfig.blockSizeHorizontal * 41,
-                padding: EdgeInsets.only(
-                  left: SizeConfig.blockSizeHorizontal * 1,
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Text('      All CENTERS',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontWeight: FontWeight.w600,
-                          fontSize: SizeConfig.blockSizeVertical * 2.6,
-                        )),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        new Divider(),
-        new Container(
-          child: new Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RaisedButton(
-                    padding: EdgeInsets.only(
-                      left: SizeConfig.blockSizeHorizontal * 5.6,
-                      right: SizeConfig.blockSizeHorizontal * 5.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(18.0),
-                    ),
-                    child: Text('Today',
-                        style: TextStyle(
-                            color: day ? Colors.deepPurple[300] : Colors.white,
-                            fontSize: SizeConfig.blockSizeVertical * 2.6)),
-                    onPressed: _nextImage,
-                    elevation: 0.0,
-                    color: day ? Colors.white : Colors.purple,
-                    disabledColor: Colors.white,
-                  ),
-                  RaisedButton(
-                    padding: EdgeInsets.only(
-                      left: SizeConfig.blockSizeHorizontal * 5.6,
-                      right: SizeConfig.blockSizeHorizontal * 5.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(18.0),
-                    ),
-                    child: Text('Tommorow',
-                        style: TextStyle(
-                            color: day ? Colors.white : Colors.deepPurple[300],
-                            fontSize: SizeConfig.blockSizeVertical * 2.6)),
-                    onPressed: _previousImage,
-                    elevation: 5.0,
-                    color: night ? Colors.purple : Colors.white,
-                  ),
-                  RaisedButton(
-                    padding: EdgeInsets.only(
-                      left: SizeConfig.blockSizeHorizontal * 5.6,
-                      right: SizeConfig.blockSizeHorizontal * 5.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(18.0),
-                    ),
-                    child: Text('Friday',
-                        style: TextStyle(
-                            color: Colors.deepPurple[300],
-                            fontSize: SizeConfig.blockSizeVertical * 2.6)),
-                    color: Colors.white,
-                    disabledColor: Colors.white,
-                  )
-                ],
-              ),
-              Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      image: DecorationImage(
-                          image: AssetImage(photos[photoIndex]),
-                          fit: BoxFit.fill)),
-                  height: SizeConfig.blockSizeVertical * 25.0,
-                  width: SizeConfig.blockSizeHorizontal * 80.0,
-                ),
-              ),
-              new Container(
-                 padding: EdgeInsets.only(
-            // top: MediaQuery.of(context).size.height / 38,
-            left: MediaQuery.of(context).size.width / 20,
-            right: MediaQuery.of(context).size.width / 80,
-          ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  RaisedButton(
-                    padding: EdgeInsets.only(
-                      top: SizeConfig.blockSizeVertical*2,
-                      left: SizeConfig.blockSizeHorizontal * 2.6,
-                      right: SizeConfig.blockSizeHorizontal * 2.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(9.0),
-                    ),
-                    child: Text('7:00Am',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeVertical * 1.9)),
-                    color: Colors.white,
-                    disabledColor: Colors.white,
-                    elevation: 5.0,),
-                    RaisedButton(
-                    padding: EdgeInsets.only(
-                      top: SizeConfig.blockSizeVertical*2,
-                      left: SizeConfig.blockSizeHorizontal * 2.6,
-                      right: SizeConfig.blockSizeHorizontal * 2.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(9.0),
-                    ),
-                    child: Text('6:00Am',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeVertical * 1.9)),
-                    color: Colors.white,
-                    disabledColor: Colors.white,
-                    elevation: 5.0,),
-                    RaisedButton(
-                    padding: EdgeInsets.only(
-                      top: SizeConfig.blockSizeVertical*2,
-                      left: SizeConfig.blockSizeHorizontal * 2.6,
-                      right: SizeConfig.blockSizeHorizontal * 2.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(9.0),
-                    ),
-                    child: Text('more',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeVertical * 1.9)),
-                    color: Colors.white,
-                    disabledColor: Colors.white,
-                    elevation: 5.0,),
-                    RaisedButton(
-                    padding: EdgeInsets.only(
-                      top: SizeConfig.blockSizeVertical*2,
-                      left: SizeConfig.blockSizeHorizontal * 2.6,
-                      right: SizeConfig.blockSizeHorizontal * 2.6,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: new BorderRadius.circular(9.0),
-                    ),
-                    child: Text('6:00Am',
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: SizeConfig.blockSizeVertical * 1.9)),
-                    color: Colors.white,
-                    disabledColor: Colors.white,
-                    elevation: 5.0,),
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+              //          Text("₹ 6990", style: TextStyle(color: Colors.black, fontSize: 36.0,fontWeight: FontWeight.bold,),
 
-                ],
-              ))
-            ],
-          ),
-        ),
-        Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25.0),
-                      image: DecorationImage(
-                          image: AssetImage('image/how_it_works.png'),
-                          fit: BoxFit.fill)),
-                  height: SizeConfig.blockSizeVertical * 35.0,
-                  width: SizeConfig.blockSizeHorizontal * 98.0,
-                ),
-              ),
-      ],
-    );
-  }
-}
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+              //          Text("₹ 1398/session", style: TextStyle(color: Colors.grey, fontSize:12.0,),
+
+              //          ),
+              //          Padding(
+              //            padding: EdgeInsets.only(bottom: 5.0,),
+              //          ),
+
+              //         ],
+              //         ),
+
+              //        ],
+
+              //  ),
+              // ),
+              // Z
+              // SizedBox(
+              //   height: MediaQuery.of(context).size.height / 10,
+              //   child: Row(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: <Widget>[
+              //       Column(
+              //         crossAxisAlignment: CrossAxisAlignment.start,
+              //         children: <Widget>[
+              //           Text(
+              //             "SILVER TRAINER PACKS",
+              //             style: TextStyle(
+              //               color: Colors.black,
+              //               height: 22.0,
+              //             ),
+              //             textAlign: TextAlign.left,
+              //           ),
+              //           Padding(
+              //             padding: EdgeInsets.only(
+              //               bottom: 5.0,
+              //             ),
+              //           ),
+              //           Text(
+              //             "Cult Galleria",
+              //             style: TextStyle(
+              //               color: Colors.black,
+              //               height: 18.0,
+              //             ),
+              //             textAlign: TextAlign.left,
+              //           ),
+              //         ],
+              //       ),
+              //       Tab(
+              //         text: "ALL CENTERS",
+              //       ),
+              //     ],
+              //   ),
+              // ),
+
+              // Wrap(
+              //   spacing: 5.0,
+              //   children: <Widget>[
+              //     Chip(
+              //       label: RichText(
+              //         text: TextSpan(
+              //           style: DefaultTextStyle.of(context).style,
+              //           children: <TextSpan>[
+              //             TextSpan(
+              //               text: '5 Sessions \n',
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 18.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: '₹ 7490 \n',
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.6),
+              //                 decoration: TextDecoration.lineThrough,
+              //                 fontSize: 15.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 6990 \n",
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 36.0,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 1398/session",
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.4),
+              //                 fontSize: 12.0,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     Chip(
+              //       label: RichText(
+              //         text: TextSpan(
+              //           style: DefaultTextStyle.of(context).style,
+              //           children: <TextSpan>[
+              //             TextSpan(
+              //               text: '11 Sessions \n',
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 18.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: '₹ 7490 \n',
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.6),
+              //                 decoration: TextDecoration.lineThrough,
+              //                 fontSize: 15.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 1990 \n",
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 36.0,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 1354/session",
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.4),
+              //                 fontSize: 12.0,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //     Chip(
+              //       label: RichText(
+              //         text: TextSpan(
+              //           style: DefaultTextStyle.of(context).style,
+              //           children: <TextSpan>[
+              //             TextSpan(
+              //               text: '25 Sessions \n',
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 18.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: '₹ 7490 \n',
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.6),
+              //                 decoration: TextDecoration.lineThrough,
+              //                 fontSize: 15.0,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 8990 \n",
+              //               style: TextStyle(
+              //                 color: Colors.black,
+              //                 fontSize: 36.0,
+              //                 fontWeight: FontWeight.bold,
+              //               ),
+              //             ),
+              //             TextSpan(
+              //               text: "₹ 1354/session",
+              //               style: TextStyle(
+              //                 color: Colors.black.withOpacity(0.4),
+              //                 fontSize: 12.0,
+              //               ),
+              //             ),
+              //           ],
+              //         ),
+              //       ),
+              //     ),
+              //   ],R
+              // ),
+//             ],
+          
+        
+      
+//     );
+  
+//   }
+// }
+
+
+// class Workout extends StatefulWidget {
+//   @override
+//   _WorkoutState createState() => _WorkoutState();
+// }
+
+// class _WorkoutState extends State<JatinHome> {
+//   @override
+//   Widget build(BuildContext context) {
+//     SizeConfig().init(context);
+//     home:
+//     return ListView(
+//       children: <Widget>[
+//         Text("to be done"),
+//       ],
+//     );
+//   }
+// }
 
 // class Packages extends StatefulWidget {
 //   @override

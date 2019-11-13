@@ -25,4 +25,13 @@ class MyFlutterApp {
   static const _kFontFam = 'MyFlutterApp';
 
   static const IconData circle = const IconData(0xf111, fontFamily: _kFontFam);
+  
 }
+class Triangle {
+  Triangle._();
+
+  static const _kFontFam = 'Triangle';
+
+  static const IconData down_dir = const IconData(0xe800, fontFamily: _kFontFam);
+}
+
