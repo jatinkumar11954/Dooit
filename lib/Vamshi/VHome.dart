@@ -18,10 +18,14 @@ class _VamshiHomeState extends State<VamshiHome> {
       appBar: AppBar(
         title: Text("Vamshi's Screens"),
       ),
-      body: Container(
-        child: Center(
-         child:Text("Start coding here  ALL THE BEST!!!",style: TextStyle(color: Colors.green,fontSize: SizeConfig.blockSizeVertical *3.0,),),
-        ) ),
+      body: ListView(
+        children: <Widget>[
+          Row(children: <Widget>[
+            
+          ],)
+        ],
+      
+        ),
     ),
     );
   }
