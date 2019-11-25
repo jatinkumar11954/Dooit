@@ -9,20 +9,30 @@ class SankethHome extends StatefulWidget {
 }
 
 class _SankethHomeState extends State<SankethHome> {
-    final myController = TextEditingController();
- void initState() {
+  final gtext1 = TextEditingController();
+  final gtext5 = TextEditingController();
+  final gtext10 = TextEditingController();
+  final stext1 = TextEditingController();
+  final stext5 = TextEditingController();
+  final stext10 = TextEditingController();
+
+  void initState() {
     super.initState();
 
-    // Start listening to changes.
     // myController.addListener();
   }
+
   @override
   void dispose() {
-    // Clean up the controller when the widget is removed from the
-    // widget tree.
-    myController.dispose();
+    gtext1.dispose();
+    gtext5.dispose();
+    gtext10.dispose();
+    stext1.dispose();
+    stext5.dispose();
+    stext10.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,89 +40,88 @@ class _SankethHomeState extends State<SankethHome> {
         title: Text("Data Table"),
       ),
       body: ListView(
-        
-
-        children:<Widget>[SizedBox(
-        width: MediaQuery.of(context).size.width * 0.96,
-        height: MediaQuery.of(context).size.height * 0.90,
-        child: Column(
-          children: <Widget>[
-            Center(
-                child: Padding(
-              padding: EdgeInsets.only(
-                bottom: MediaQuery.of(context).size.height * 0.04,
-                top: MediaQuery.of(context).size.height * 0.04,
-              ),
-              child: Text(
-                "Gold Trainer Sessions",
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.height * 0.029,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            )),
-            SizedBox(
-                child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: <Widget>[
+          SizedBox(
+            width: MediaQuery.of(context).size.width * 0.96,
+            height: MediaQuery.of(context).size.height * 0.90,
+            child: Column(
               children: <Widget>[
-                Text(
-                  "Sessions",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.025,
-                    fontWeight: FontWeight.bold,
+                Center(
+                    child: Padding(
+                  padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).size.height * 0.04,
+                    top: MediaQuery.of(context).size.height * 0.04,
                   ),
-                ),
-                Text(
-                  "Current Rates",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.025,
-                    fontWeight: FontWeight.bold,
+                  child: Text(
+                    "Gold Trainer Sessions",
+                    style: TextStyle(
+                      fontSize: MediaQuery.of(context).size.height * 0.029,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  "New Rates",
-                  style: TextStyle(
-                    fontSize: MediaQuery.of(context).size.height * 0.025,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
-            )),
-            Container(
-              padding: EdgeInsets.only(
-                  left: MediaQuery.of(context).size.width * 0.08),
-              width: MediaQuery.of(context).size.width * 0.94,
-              height: MediaQuery.of(context).size.height * 0.21,
-              child: DataTable(
-                headingRowHeight: MediaQuery.of(context).size.height * 0.012,
-                horizontalMargin: MediaQuery.of(context).size.width * 0.03,
-                columnSpacing: MediaQuery.of(context).size.width * 0.04,
-                sortAscending: true,
-                columns: <DataColumn>[
-                  DataColumn(
-                    // label: Text("First Name"),
-                    numeric: false,
+                )),
+                SizedBox(
+                    child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Text(
+                      "Sessions",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.025,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "Current Rates",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.025,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "New Rates",
+                      style: TextStyle(
+                        fontSize: MediaQuery.of(context).size.height * 0.025,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                )),
+                Container(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.08),
+                  width: MediaQuery.of(context).size.width * 0.94,
+                  height: MediaQuery.of(context).size.height * 0.21,
+                  child: DataTable(
+                    headingRowHeight:
+                        MediaQuery.of(context).size.height * 0.012,
+                    horizontalMargin: MediaQuery.of(context).size.width * 0.03,
+                    columnSpacing: MediaQuery.of(context).size.width * 0.04,
+                    sortAscending: true,
+                    columns: <DataColumn>[
+                      DataColumn(
+                        // label: Text("First Name"),
+                        numeric: false,
 
-                    tooltip: "To display first name of the Name",
-                    label: Text(""),
-                  ),
-                  DataColumn(
-                    label: Text(""),
-                    numeric: false,
-                    tooltip: "To display last name of the Name",
-                  ),
-                  DataColumn(
-                    label: Text(""),
-                    numeric: false,
-                    tooltip: "To display last name of the Name",
-                  ),
-                ],
-                rows: names
-                    .map(
-                      (name) => DataRow(
+                        tooltip: "To display first name of the Name",
+                        label: Text(""),
+                      ),
+                      DataColumn(
+                        label: Text(""),
+                        numeric: false,
+                        tooltip: "To display last name of the Name",
+                      ),
+                      DataColumn(
+                        label: Text(""),
+                        numeric: false,
+                        tooltip: "To display last name of the Name",
+                      ),
+                    ],
+                    rows: [
+                      DataRow(//for the data of session 1 in gold
                         cells: [
                           DataCell(
-                            Text(name.Sessions,
+                            Text("1",
                                 style: TextStyle(
                                     fontSize:
                                         MediaQuery.of(context).size.height *
@@ -121,7 +130,7 @@ class _SankethHomeState extends State<SankethHome> {
                             placeholder: false,
                           ),
                           DataCell(
-                            Text(name.C_Rates,
+                            Text("\$320",
                                 style: TextStyle(
                                     fontSize:
                                         MediaQuery.of(context).size.height *
@@ -130,113 +139,242 @@ class _SankethHomeState extends State<SankethHome> {
                             placeholder: false,
                           ),
                           DataCell(
-                            Text(name.N_Rates,
-                                style: TextStyle(
-                                    color: Colors.red,
+                            TextField(
+                              decoration: new InputDecoration(
+                                suffixStyle: TextStyle(
                                     fontSize:
                                         MediaQuery.of(context).size.height *
-                                            0.025)),
+                                            0.025,
+                                    color: Colors.red),
+                                prefixText: "\$",
+                                prefixStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                                hintText: "\$320",
+                                hintStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                              ),
+                              onSubmitted: (text) {
+                                print(text);
+                              },
+                              controller: gtext1,
+                              keyboardType: TextInputType.number,
+                            ),
                             showEditIcon: false,
-                            placeholder: false,
+                            placeholder: true,
                             onTap: () {},
                           ),
                         ],
                       ),
-                    )
-                    .toList(),
-              ),
-            ),
-            RaisedButton(
-              color: Colors.white,
-              child: Text(
-                "Confirm New Rates",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: MediaQuery.of(context).size.height * 0.025),
-              ),
-              onPressed: () => confirmG(context),
-            ),
-            SizedBox(
-              child: Column(
-                children: <Widget>[
-                  Center(
-                      child: Padding(
-                    padding: EdgeInsets.only(
-                      bottom: MediaQuery.of(context).size.height * 0.04,
-                      top: MediaQuery.of(context).size.height * 0.02,
-                    ),
-                    child: Text(
-                      "Silver Trainer Sessions",
-                      style: TextStyle(
-                        fontSize: MediaQuery.of(context).size.height * 0.029,
-                        fontWeight: FontWeight.bold,
+                      DataRow(//for the data of session 5 in gold
+                        cells: [
+                          DataCell(
+                            Text("5",
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025)),
+                            showEditIcon: false,
+                            placeholder: false,
+                          ),
+                          DataCell(
+                            Text("\$620",
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025)),
+                            showEditIcon: false,
+                            placeholder: false,
+                          ),
+                          DataCell(
+                            TextField(
+                              decoration: new InputDecoration(
+                                suffixStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                                prefixText: "\$",
+                                prefixStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                                hintText: "\$620",
+                                hintStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                              ),
+                              onSubmitted: (text) {
+                                print(text);
+                              },
+                              controller: gtext5,
+                              keyboardType: TextInputType.number,
+                            ),
+                            showEditIcon: false,
+                            placeholder: true,
+                            onTap: () {},
+                          ),
+                        ],
                       ),
-                    ),
-                  )),
-                  SizedBox(
-                      child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Text(
-                        "Sessions",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.025,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Current Rates",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.025,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "New Rates",
-                        style: TextStyle(
-                          fontSize: MediaQuery.of(context).size.height * 0.025,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      DataRow(//for the data of session 10 in gold
+                        cells: [
+                          DataCell(
+                            Text("10",
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025)),
+                            showEditIcon: false,
+                            placeholder: false,
+                          ),
+                          DataCell(
+                            Text("\$1020",
+                                style: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025)),
+                            showEditIcon: false,
+                            placeholder: false,
+                          ),
+                          DataCell(
+                            TextField(
+                              decoration: new InputDecoration(
+                                suffixStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                                prefixText: "\$",
+                                prefixStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                                hintText: "\$1020",
+                                hintStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.height *
+                                            0.025,
+                                    color: Colors.red),
+                              ),
+                              onSubmitted: (text) {
+                                print(text);
+                              },
+                              controller: gtext10,
+                              keyboardType: TextInputType.number,
+                            ),
+                            showEditIcon: false,
+                            placeholder: true,
+                            onTap: () {},
+                          ),
+                        ],
                       ),
                     ],
-                  )),
-                  Container(
-                    padding: EdgeInsets.only(
-                        left: MediaQuery.of(context).size.width * 0.08),
-                    width: MediaQuery.of(context).size.width * 0.94,
-                    height: MediaQuery.of(context).size.height * 0.21,
-                    child: DataTable(
-                      headingRowHeight:
-                          MediaQuery.of(context).size.height * 0.012,
-                      horizontalMargin:
-                          MediaQuery.of(context).size.width * 0.03,
-                      columnSpacing: MediaQuery.of(context).size.width * 0.04,
-                      sortAscending: true,
-                      columns: <DataColumn>[
-                        DataColumn(
-                          // label: Text("First Name"),
-                          numeric: false,
+                  ),
+                ),
+                RaisedButton(
+                  color: Colors.white,
+                  child: Text(
+                    "Confirm New Rates",
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontSize: MediaQuery.of(context).size.height * 0.025),
+                  ),
+                  onPressed: () => confirmG(context),
+                ),
+                SizedBox(
+                  child: Column(
+                    children: <Widget>[
+                      Center(
+                          child: Padding(
+                        padding: EdgeInsets.only(
+                          bottom: MediaQuery.of(context).size.height * 0.04,
+                          top: MediaQuery.of(context).size.height * 0.02,
+                        ),
+                        child: Text(
+                          "Silver Trainer Sessions",
+                          style: TextStyle(
+                            fontSize:
+                                MediaQuery.of(context).size.height * 0.029,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )),
+                      SizedBox(
+                          child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: <Widget>[
+                          Text(
+                            "Sessions",
+                            style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.025,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "Current Rates",
+                            style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.025,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(
+                            "New Rates",
+                            style: TextStyle(
+                              fontSize:
+                                  MediaQuery.of(context).size.height * 0.025,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      )),
+                      Container(
+                        padding: EdgeInsets.only(
+                            left: MediaQuery.of(context).size.width * 0.08),
+                        width: MediaQuery.of(context).size.width * 0.94,
+                        height: MediaQuery.of(context).size.height * 0.21,
+                        child: DataTable(
+                          headingRowHeight:
+                              MediaQuery.of(context).size.height * 0.012,
+                          horizontalMargin:
+                              MediaQuery.of(context).size.width * 0.03,
+                          columnSpacing:
+                              MediaQuery.of(context).size.width * 0.04,
+                          sortAscending: true,
+                          columns: <DataColumn>[
+                            DataColumn(
+                              // label: Text("First Name"),
+                              numeric: false,
 
-                          tooltip: "To display first name of the Name",
-                          label: Text(""),
-                        ),
-                        DataColumn(
-                          label: Text(""),
-                          numeric: false,
-                          tooltip: "To display last name of the Name",
-                        ),
-                        DataColumn(
-                          label: Text(""),
-                          numeric: false,
-                          tooltip: "To display last name of the Name",
-                        ),
-                      ],
-                      rows: names
-                          .map(
-                            (name) => DataRow(
+                              tooltip: "To display first name of the Name",
+                              label: Text(""),
+                            ),
+                            DataColumn(
+                              label: Text(""),
+                              numeric: false,
+                              tooltip: "To display last name of the Name",
+                            ),
+                            DataColumn(
+                              label: Text(""),
+                              numeric: false,
+                              tooltip: "To display last name of the Name",
+                            ),
+                          ],
+                          rows: [
+                            DataRow(//for the data of session 1 in silver
                               cells: [
                                 DataCell(
-                                  Text(name.Sessions,
+                                  Text("1",
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
@@ -246,7 +384,7 @@ class _SankethHomeState extends State<SankethHome> {
                                   placeholder: false,
                                 ),
                                 DataCell(
-                                  Text(name.C_Rates,
+                                  Text("\$320",
                                       style: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
@@ -256,19 +394,22 @@ class _SankethHomeState extends State<SankethHome> {
                                   placeholder: false,
                                 ),
                                 DataCell(
-                                 
                                   TextField(
                                     decoration: new InputDecoration(
-                                       suffixStyle: TextStyle(fontSize: MediaQuery.of(context)
+                                      suffixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.025,color: Colors.red),
+                                              0.025,
+                                          color: Colors.red),
                                       prefixText: "\$",
-                                      prefixStyle: TextStyle(fontSize: MediaQuery.of(context)
+                                      prefixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.025,color: Colors.red),
-                                      hintText: name.N_Rates,
+                                              0.025,
+                                          color: Colors.red),
+                                      hintText: "\$320",
                                       hintStyle: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
@@ -276,47 +417,155 @@ class _SankethHomeState extends State<SankethHome> {
                                               0.025,
                                           color: Colors.red),
                                     ),
-                                    onSubmitted:(text){
+                                    onSubmitted: (text) {
                                       print(text);
-                                    }
-                                      
-                                    ,
-                                    controller: myController,
+                                    },
+                                    controller: stext1,
                                     keyboardType: TextInputType.number,
                                   ),
-                                  // Text(name.N_Rates,
-                                  //     style: TextStyle(
-                                  //         color: Colors.red,
-                                  //         fontSize: MediaQuery.of(context)
-                                  //                 .size
-                                  //                 .height *
-                                  //             0.025)),
                                   showEditIcon: false,
                                   placeholder: true,
                                   onTap: () {},
                                 ),
                               ],
                             ),
-                          )
-                          .toList(),
-                    ),
+                            DataRow(//for the data of session 5 in silver
+                              cells: [
+                                DataCell(
+                                  Text("5",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025)),
+                                  showEditIcon: false,
+                                  placeholder: false,
+                                ),
+                                DataCell(
+                                  Text("\$620",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025)),
+                                  showEditIcon: false,
+                                  placeholder: false,
+                                ),
+                                DataCell(
+                                  TextField(
+                                    decoration: new InputDecoration(
+                                      suffixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                      prefixText: "\$",
+                                      prefixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                      hintText: "\$620",
+                                      hintStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                    ),
+                                    onSubmitted: (text) {
+                                      print(text);
+                                    },
+                                    controller: stext5,
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  showEditIcon: false,
+                                  placeholder: true,
+                                  onTap: () {},
+                                ),
+                              ],
+                            ),
+                            DataRow(//for the data of session 10 in silver
+                              cells: [
+                                DataCell(
+                                  Text("10",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025)),
+                                  showEditIcon: false,
+                                  placeholder: false,
+                                ),
+                                DataCell(
+                                  Text("\$1020",
+                                      style: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025)),
+                                  showEditIcon: false,
+                                  placeholder: false,
+                                ),
+                                DataCell(
+                                  TextField(
+                                    decoration: new InputDecoration(
+                                      suffixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                      prefixText: "\$",
+                                      prefixStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                      hintText: "\$1020",
+                                      hintStyle: TextStyle(
+                                          fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,
+                                          color: Colors.red),
+                                    ),
+                                    onSubmitted: (text) {
+                                      print(text);
+                                    },
+                                    controller: stext10,
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  showEditIcon: false,
+                                  placeholder: true,
+                                  onTap: () {},
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
+                ),
+                RaisedButton(
+                  color: Colors.white,
+                  child: Text(
+                    "Confirm New Rates",
+                    style: TextStyle(
+                        color: Colors.red,
+                        fontSize: MediaQuery.of(context).size.height * 0.025),
+                  ),
+                  onPressed: () => confirmS(context),
+                ),
+              ],
             ),
-            RaisedButton(
-              color: Colors.white,
-              child: Text(
-                "Confirm New Rates",
-                style: TextStyle(
-                    color: Colors.red,
-                    fontSize: MediaQuery.of(context).size.height * 0.025),
-              ),
-              onPressed: () => confirmS(context),
-            ),
-          ],
-        ),
-      ),],),
+          ),
+        ],
+      ),
     );
   }
 
@@ -554,17 +803,3 @@ class _SankethHomeState extends State<SankethHome> {
         });
   }
 }
-
-class Name {
-  String Sessions;
-  String C_Rates;
-  String N_Rates;
-
-  Name({this.Sessions, this.C_Rates, this.N_Rates});
-}
-
-var names = <Name>[
-  Name(Sessions: "1", C_Rates: "\$320", N_Rates: "\$320"),
-  Name(Sessions: "5", C_Rates: "\$920", N_Rates: "\$920"),
-  Name(Sessions: "10", C_Rates: "\$1020", N_Rates: "\$1020"),
-];
