@@ -9,13 +9,30 @@ class SankethHome extends StatefulWidget {
 }
 
 class _SankethHomeState extends State<SankethHome> {
+    final myController = TextEditingController();
+ void initState() {
+    super.initState();
+
+    // Start listening to changes.
+    // myController.addListener();
+  }
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is removed from the
+    // widget tree.
+    myController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Data Table"),
       ),
-      body: SizedBox(
+      body: ListView(
+        
+
+        children:<Widget>[SizedBox(
         width: MediaQuery.of(context).size.width * 0.96,
         height: MediaQuery.of(context).size.height * 0.90,
         child: Column(
@@ -239,15 +256,43 @@ class _SankethHomeState extends State<SankethHome> {
                                   placeholder: false,
                                 ),
                                 DataCell(
-                                  Text(name.N_Rates,
-                                      style: TextStyle(
-                                          color: Colors.red,
+                                 
+                                  TextField(
+                                    decoration: new InputDecoration(
+                                       suffixStyle: TextStyle(fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,color: Colors.red),
+                                      prefixText: "\$",
+                                      prefixStyle: TextStyle(fontSize: MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.025,color: Colors.red),
+                                      hintText: name.N_Rates,
+                                      hintStyle: TextStyle(
                                           fontSize: MediaQuery.of(context)
                                                   .size
                                                   .height *
-                                              0.025)),
+                                              0.025,
+                                          color: Colors.red),
+                                    ),
+                                    onSubmitted:(text){
+                                      print(text);
+                                    }
+                                      
+                                    ,
+                                    controller: myController,
+                                    keyboardType: TextInputType.number,
+                                  ),
+                                  // Text(name.N_Rates,
+                                  //     style: TextStyle(
+                                  //         color: Colors.red,
+                                  //         fontSize: MediaQuery.of(context)
+                                  //                 .size
+                                  //                 .height *
+                                  //             0.025)),
                                   showEditIcon: false,
-                                  placeholder: false,
+                                  placeholder: true,
                                   onTap: () {},
                                 ),
                               ],
@@ -271,7 +316,7 @@ class _SankethHomeState extends State<SankethHome> {
             ),
           ],
         ),
-      ),
+      ),],),
     );
   }
 
@@ -364,24 +409,25 @@ class _SankethHomeState extends State<SankethHome> {
                         color: Colors.grey.withOpacity(0.2),
                         // height: MediaQuery.of(context).size.height * 0.34,
                         width: MediaQuery.of(context).size.width * 1.0,
-                     child: RaisedButton(
-                        color: Colors.red,
-                        padding: EdgeInsets.only(
-                          // top:MediaQuery.of(context).size.height*0.3,
-                          left: MediaQuery.of(context).size.width * 0.1,
-                          right: MediaQuery.of(context).size.width * 0.1,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(27.0),
-                        ),
-                        child: Text(
-                          'CONFIRM NEW RATES',
-                          style: TextStyle(
-                            color: Colors.white,
+                        child: RaisedButton(
+                          color: Colors.red,
+                          // padding: EdgeInsets.only(
+                          //   // top:MediaQuery.of(context).size.height*0.3,
+                          //   left: MediaQuery.of(context).size.width * 0.03,
+                          //   right: MediaQuery.of(context).size.width * 0.09,
+                          // ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(27.0),
                           ),
+                          child: Text(
+                            'CONFIRM NEW RATES',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
-                      ),),
+                      ),
                     ],
                   ),
                 )
@@ -480,24 +526,25 @@ class _SankethHomeState extends State<SankethHome> {
                         color: Colors.grey.withOpacity(0.2),
                         // height: MediaQuery.of(context).size.height * 0.34,
                         width: MediaQuery.of(context).size.width * 1.0,
-                     child: RaisedButton(
-                        color: Colors.red,
-                        padding: EdgeInsets.only(
-                          // top:MediaQuery.of(context).size.height*0.3,
-                          left: MediaQuery.of(context).size.width * 0.1,
-                          right: MediaQuery.of(context).size.width * 0.1,
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(27.0),
-                        ),
-                        child: Text(
-                          'CONFIRM NEW RATES',
-                          style: TextStyle(
-                            color: Colors.white,
+                        child: RaisedButton(
+                          color: Colors.red,
+                          padding: EdgeInsets.only(
+                            // top:MediaQuery.of(context).size.height*0.3,
+                            left: MediaQuery.of(context).size.width * 0.1,
+                            right: MediaQuery.of(context).size.width * 0.1,
                           ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(27.0),
+                          ),
+                          child: Text(
+                            'CONFIRM NEW RATES',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                          onPressed: () {},
                         ),
-                        onPressed: () {},
-                      ),),
+                      ),
                     ],
                   ),
                 )
